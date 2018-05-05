@@ -17,8 +17,9 @@
         <tr>
           <td><%= region.name %></td>
           <td>
-          <% region.municipalities.each do |municipalities| %>
-            <%= municipalities.name %>,
+          <% region.municipalities.each do |municipality| %>
+
+            <%= municipality.state == "Activo" ? municipality.name : nil %>
           <% end %>
         </td>
           <td><%= link_to 'Ver', region %></td>

@@ -1,24 +1,10 @@
-# README
+# Regiones y Municipios
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Esta aplicación permite listar, editar y eliminar regiones y sus municipios
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Para correr localmente:
+1. Clone este repo.
+2. "bundle"
+3. "rails db:migrate".
+4. "rails db:seed".
+5. "rails server".

@@ -20,7 +20,7 @@
           <%= form.text_field :name, id: :region_name, class:"form-control" %>
         </div>
         <div class="form-group">
-                <%= form.collection_check_boxes :municipality_ids, Municipality.all, :id, :name do |b| %>
+                <%= form.collection_check_boxes :municipality_ids, Municipality.all.where(state: "Activo"), :id, :name do |b| %>
                   <div>
                     <%= b.check_box %>
                     <%= b.label %>
