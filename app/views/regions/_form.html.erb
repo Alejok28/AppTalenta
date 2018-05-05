@@ -1,29 +1,38 @@
-<%= form_with(model: region, local: true) do |form| %>
-  <% if region.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(region.errors.count, "error") %> prohibited this region from being saved:</h2>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <%= form_with(model: region, local: true) do |form| %>
+      <h1><%=title%></h1>
+        <% if region.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(region.errors.count, "error") %> prohibited this region from being saved:</h2>
 
-      <ul>
-      <% region.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+            <ul>
+            <% region.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :region_name %>
-  </div>
-  <div class="field">
-          <%= form.collection_check_boxes :municipality_ids, Municipality.all, :id, :name do |b| %>
-            <div>
-              <%= b.check_box %> <%= b.label %>
-            </div>
-          <% end %>
+        <div class="form-group">
+          <%= form.label :name %>
+          <%= form.text_field :name, id: :region_name, class:"form-control" %>
         </div>
+        <div class="form-group">
+                <%= form.collection_check_boxes :municipality_ids, Municipality.all, :id, :name do |b| %>
+                  <div>
+                    <%= b.check_box %>
+                    <%= b.label %>
+                  </div>
+                <% end %>
+              </div>
+        <div class="actions">
+          <%= form.submit title, class:"btn btn-primary btn-block" %>
+        </div>
+      <% end %>
 
-  <div class="actions">
-    <%= form.submit %>
+      <%= link_to 'Back', regions_path %>
+    </div>
   </div>
-<% end %>
+</div>
